@@ -151,7 +151,7 @@ if solve:
 
         for i,v in enumerate(result.x):
             st.write(f"x{i+1} = {round(v,4)}")
-
+        #Update
         # ---------------- DUAL ----------------
         try:
             A_np = np.array(A)
@@ -182,7 +182,7 @@ if solve:
         3. Apply optimization  
         4. Compute solution  
         """)
-
+       #update
         # ---------------- PDF ----------------
         def create_pdf():
             doc = SimpleDocTemplate("result.pdf")
@@ -197,7 +197,7 @@ if solve:
 
         with open("result.pdf","rb") as f:
             st.download_button("📄 Download PDF", f, file_name="solution.pdf", mime="application/pdf")
-
+        #update
         # ---------------- GRAPH ----------------
         if n==2:
             st.subheader("📊 Graph")
