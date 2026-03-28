@@ -151,7 +151,7 @@ if solve:
 
         for i,v in enumerate(result.x):
             st.write(f"x{i+1} = {round(v,4)}")
-
+        #Update
         # ---------------- DUAL ----------------
         try:
             A_np = np.array(A)
