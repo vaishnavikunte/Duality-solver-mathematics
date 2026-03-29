@@ -224,11 +224,11 @@ if solve:
 
           solution_data = {
           "optimal_value": round(val,4),
-         "variables": list(np.round(result.x,4))
-         }
+          "variables": list(np.round(result.x,4))
+          }
 
             st.download_button(
-        "📦 Download JSON",
+         "📦 Download JSON",
         data=json.dumps(solution_data, indent=2),
         file_name="solution.json",
         mime="application/json"
