@@ -144,6 +144,13 @@ def solve_lp(problem_type, c, A, b, ineq):
 solve = st.button("🚀 Solve Problem")
 
 if solve:
+    if any(len(row) != n for row in A):
+        st.error("Invalid constraint matrix")
+        st.stop()
+
+    if len(c) != n:
+        st.error("Invalid objective function")
+        st.stop()
 
     A_ub, b_ub = [], []
     for i in range(m):
