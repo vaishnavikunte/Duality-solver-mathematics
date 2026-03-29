@@ -15,3 +15,4 @@ This project is designed to solve mathematical duality problems in a simple and 
 
 ## Purpose
 This project helps in understanding and solving duality problems more easily using programming.
+# second update
