@@ -125,6 +125,21 @@ else:
         b.append(rhs)
         ineq.append(sign)
 
+# ---------------- SOLVER FUNCTION ----------------
+def solve_lp(problem_type, c, A, b, ineq):
+    A_ub, b_ub = [], []
+
+    for i in range(len(ineq)):
+        if ineq[i] == "≤":
+            A_ub.append(A[i])
+            b_ub.append(b[i])
+        elif ineq[i] == "≥":
+            A_ub.append([-x for x in A[i]])
+            b_ub.append(-b[i])
+
+    c_mod = [-x for x in c] if problem_type=="Maximization" else c
+
+    return linprog(c_mod, A_ub=A_ub, b_ub=b_ub, method="highs")
 # ---------------- SOLVE ----------------
 solve = st.button("🚀 Solve Problem")
 
